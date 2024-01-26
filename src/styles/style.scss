@@ -1,0 +1,125 @@
+@use "./variables" as var;
+
+/* Root */
+* {
+    margin: 0;
+    padding: 0;
+    zoom: 1;
+    box-sizing: content-box;
+}
+
+html {
+    font-size: var.$root-font-size;
+}
+
+/**
+ * Header / ヘッダー
+ */
+header {
+    background-color: var.$bg-black;
+
+    * {
+        @include var.fc("white");
+    }
+
+    // wrapper
+    .hd-content {
+        display: flex;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+
+        // スマホでは画面幅いっぱいに、PCでは若干余白を残す
+        @include var.mq("sp") {
+            width: 100%;
+        }
+
+        @include var.mq("pc") {
+            width: 95%;
+            max-width: var.$pc-max-width;
+        }
+
+        .hd-logo {
+            display: flex;
+            align-items: center;
+            width: 350px;
+            height: 55px;
+
+            .logo-icon, .logo-title {
+                display: inline-block;
+            }
+
+            .logo-icon {
+                display: none;
+                background-color: white;
+                width: 55px;
+                height: 55px;
+            }
+
+            .logo-title {
+                margin-left: 15px;
+                word-break: keep-all;
+                text-decoration: none;
+            }
+
+        }
+
+        // ロゴなどのコンテンツ
+        .hd-nav-sub {
+            display: block;
+
+            ul {
+                display: flex;
+                height: 100%;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    margin: 0 12px;
+
+                    a {
+                        display: block;
+                        transition: var.$transition;
+                    }
+
+                    a:hover {
+                        text-decoration: none;
+                        @include var.fc("white", "hover");
+                    }
+                }
+
+            }
+        }
+    }
+}
+// Header
+
+/**
+ * Footer / フッター
+ */
+footer {
+    padding: 12px 24px;
+    background-color: var.$bg-black;
+
+    * {
+        @include var.fc("white");
+
+    }
+}
+// Footer
+
+// SNS follow ボタン
+#floating-icons {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 24px 12px;
+
+    .page-up-arrow {
+        color: var.$bg-black;
+        text-shadow:1px 1px 0 #FFF, -1px -1px 0 #FFF,
+            -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+            0px 1px 0 #FFF,  0-1px 0 #FFF,
+            -1px 0 0 #FFF, 1px 0 0 #FFF;
+    }
+}

@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+/**
+ * 基本設定
+ */
+
+/* 変数 */
+
+// 基本フォントサイズ, フォントはこれに対する割合で指定(rem)
+$root-font-size: 18px;
+// 背景が黒の場所のカラーコード
+$bg-black: rgb(20, 20, 20);
+// フォントカラー黒のカラーコード
+$font-black: (
+    "default": black,
+    "hover": rgb(75, 75, 75)
+);
+// フォントカラー白のカラーコード
+$font-white: (
+    "default": rgb(234, 234, 234),
+    "hover": rgb(99, 99, 99)
+);
+// 画面幅全体のうち、コンテンツの画面幅
+// 例えば、90%に指定すると -> 画面幅の10% / 2 = 画面左右それぞれの余白
+$content-width-rate: (
+    "sp": 100%,
+    "pc": 95%
+);
+// コンテンツ内部の余白（要素同士の余白は基本これ）
+$blank-spaces: (
+    "default": (12px)
+);
+// 画面の最大幅
+$pc-max-width: 900px;
+// ホバー等のアニメーション設定
+$transition: color 0.6s 0s;
+/* PC版とSP(スマートフォン)版のブレークポイント */
+$breakpoints: (
+    "sp": "screen and (max-width: 576px)",
+    "pc": "screen and (min-width: 577px)",
+) !default;
+
+/* 関数 */
+
+/**
+ * Media Query; ブレークポイントの指定を簡略化する
+ */
+@mixin mq($bp) {
+    @media #{map-get($breakpoints, $bp)} {
+        @content;
+    }
+}
+
+/**
+ * Font Color; Font Color の指定を簡略化する
+ */
+@mixin fc($color, $type: "default") {
+    @if $color == "black" {
+        color: map-get($font-black, $type);
+    }
+    @if $color == "white" {
+        color: map-get($font-white, $type);
+    }
+}
+
+/**
+ * Blank Space; 余白設定($blank-spaces)を使うための記述を簡略化する
+ */
+@function bs($type: "default") {
+    @return map-get($blank-spaces, $type);
+}

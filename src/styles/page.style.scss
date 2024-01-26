@@ -1,0 +1,115 @@
+@use "./variables" as var;
+@import './fontawesome-free-6.5.1-web/scss/fontawesome.scss';
+@import './fontawesome-free-6.5.1-web/scss/regular.scss';
+@import './fontawesome-free-6.5.1-web/scss/solid.scss';
+
+// .tech-for-sample の子要素divの最小横幅
+$tech_for_sample_min_width: 350px;
+
+/**
+ * Main / メイン
+ */
+main {
+    width: 100%;
+
+    * {
+        @include var.fc("black");
+    }
+
+    section {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 24px;
+        margin-bottom: 24px;
+
+        @include var.mq("sp") {
+            width: map-get(var.$content-width-rate, "sp");
+        }
+
+        @include var.mq("pc") {
+            width: map-get(var.$content-width-rate, "pc");
+            max-width: var.$pc-max-width;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #333;
+            margin-top: 6px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            margin-top: var.bs();
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            margin-top: var.bs();
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            margin-top: var.bs();
+        }
+
+        li {
+            margin-left: 1.5rem;
+        }
+
+        a {
+            transition: var.$transition;
+
+            &:hover {
+                text-decoration: none;
+                @include var.fc("black", "hover");
+            }
+        }
+
+        .sample-view {
+            border-top: 1px solid var.$bg-black;
+            padding: var.bs();
+
+            .sample-view-content {
+                @include var.mq(sp) {
+                    text-align: center;
+                }
+        
+                @include var.mq(pc) {
+                    display: flex;
+                }
+
+                .sample-works-description {
+                    word-break: normal;
+
+                    @include var.mq(pc) {
+                        padding: var.bs();
+                    }
+                }
+
+                .sample-works-link {
+                    margin: 0 0 0 3px;
+                    font-weight: 900;
+                    font-style: normal;
+
+                    &:after {
+                        font: var(--fa-font-solid);
+                        content: "\f08e"; // ここにアイコンのUnicodeコードを入力
+                    }
+                }
+
+            }
+        }
+
+        .tech-for-sample {
+            display: flex;
+            overflow-x: auto;
+
+            div {
+                min-width: $tech_for_sample_min_width;
+                flex-grow: 1;
+            }
+        }
+    }
+}
+// Main
