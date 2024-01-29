@@ -5,10 +5,18 @@
 
 
 #top-kv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var.bs();
+  @include var.mq("pc") {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var.bs();
+  }
+
+  @include var.mq("sp") {
+    width: var.get-width-rate("sp");
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .profile-image-container {
     position: relative;

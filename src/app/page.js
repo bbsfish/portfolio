@@ -1,29 +1,8 @@
 import Image from "next/image";
-// import { basePath } from "../../next.config.mjs";
-// const BASE_PATH = basePath ? basePath : "";
+import Keyvisual from "@/components/Keyvisual";
 import lcImage from "@/public/sharkbrown.html.xdomain.jp.png";
-import profileImage from "@/public/me.png";
 import "@/styles/page.style.scss";
 import "@/styles/keyvisual.style.scss";
-
-function Keyvisual() {
-  return (
-    <div id="top-kv">
-      <div className="profile-image-container">
-        <Image
-          src={profileImage}
-          height={200}
-          alt="プロフィール写真"
-          className="profile-image"
-          ></Image>
-      </div>
-      <div className="profile-hello">
-        <p>こんにちは</p>
-        <p>細田佳希のポートフォリオです</p>
-      </div>
-    </div>
-  );
-}
 
 export default function Home() {
   return (
@@ -33,9 +12,9 @@ export default function Home() {
         <h1>項目</h1>
         <nav>
           <ol>
-            <li><a href="#whatican">なにができるか</a></li>
-            <li><a href="#myskill">スキル</a></li>
-            <li><a href="#myworks">作品</a></li>
+            <li><a href="#whatican" >なにができるか</a></li>
+            <li><a href="#myskill" >スキル</a></li>
+            <li><a href="#myworks" >作品</a></li>
           </ol>
         </nav>
       </section>
@@ -57,7 +36,7 @@ export default function Home() {
             </div>
             <div className="sample-works-description">
               <a
-                className="sample-works-link"
+                className="sample-works-a"
                 href="http://sharkbrown.html.xdomain.jp/panmryofficial/"
                 target="_blank"
               >サンプルホームページ</a>
@@ -98,7 +77,7 @@ export default function Home() {
             </div>
             <div className="sample-works-description">
               <a
-                className="sample-works-link"
+                className="sample-works-a"
                 href="http://sharkbrown.html.xdomain.jp/panmryofficial/"
                 target="_blank"
               >サンプルホームページ</a>
@@ -160,6 +139,10 @@ export default function Home() {
       </section>
       <section id="myworks">
         <h1>その他の作品</h1>
+        <a
+          href="https://github.com/bbsfish/portfolio"
+          target="_blank"
+        >github.com - bbsfish/portfolio</a>
       </section>
     </main>
   );

@@ -22,8 +22,8 @@ $font-white: (
 );
 // 画面幅全体のうち、コンテンツの画面幅
 // 例えば、90%に指定すると -> 画面幅の10% / 2 = 画面左右それぞれの余白
-$content-width-rate: (
-    "sp": 100%,
+$content-width-rate-settings: (
+    "sp": 95%,
     "pc": 95%
 );
 // コンテンツ内部の余白（要素同士の余白は基本これ）
@@ -34,6 +34,12 @@ $blank-spaces: (
 $pc-max-width: 900px;
 // ホバー等のアニメーション設定
 $transition: color 0.6s 0s;
+// アコーディオンメニューなど、アニメーションのあるコンテンツの共通設定
+@mixin animetion() {
+    transition: 0.6s;
+    // visibility: visible;
+    // opacity: 1;
+}
 /* PC版とSP(スマートフォン)版のブレークポイント */
 $breakpoints: (
     "sp": "screen and (max-width: 576px)",
@@ -68,4 +74,12 @@ $breakpoints: (
  */
 @function bs($type: "default") {
     @return map-get($blank-spaces, $type);
+}
+
+/**
+ * Attach Width Rate; 設定($content-width-rate-settings)から
+ * 要素に幅をあてる. main や header など、大枠に使う
+ */
+@function get-width-rate($device) {
+    @return map-get($content-width-rate-settings, $device);
 }

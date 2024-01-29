@@ -10,6 +10,21 @@
 
 html {
     font-size: var.$root-font-size;
+    scroll-behavior: smooth;
+}
+
+/**
+ * Ancher
+ */
+a[target="_blank"] {
+    margin: 0 0 0 3px;
+    font-weight: 900;
+    font-style: normal;
+
+    &:after {
+        font: var(--fa-font-solid);
+        content: "\f08e"; // ここにアイコンのUnicodeコードを入力
+    }
 }
 
 /**
@@ -24,49 +39,51 @@ header {
 
     // wrapper
     .hd-content {
-        display: flex;
-        justify-content: space-between;
-        margin-left: auto;
-        margin-right: auto;
-
-        // スマホでは画面幅いっぱいに、PCでは若干余白を残す
+        // 画面全体の幅および余白設定
         @include var.mq("sp") {
-            width: 100%;
+            width: var.get-width-rate("sp");
         }
 
         @include var.mq("pc") {
-            width: 95%;
+            width: var.get-width-rate("pc");
             max-width: var.$pc-max-width;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
+        margin-left: auto;
+        margin-right: auto;
+
+        // 左側ロゴ
         .hd-logo {
             display: flex;
             align-items: center;
-            width: 350px;
             height: 55px;
 
-            .logo-icon, .logo-title {
-                display: inline-block;
-            }
-
-            .logo-icon {
-                display: none;
-                background-color: white;
-                width: 55px;
-                height: 55px;
+            // バーガーメニューをSPで表示するための設定
+            @include var.mq("sp") {
+                width: 100%;
+                justify-content: space-between;
             }
 
             .logo-title {
-                margin-left: 15px;
+                display: inline-block;
+            }
+
+            .logo-title {
+                margin-left: var.bs();
                 word-break: keep-all;
                 text-decoration: none;
             }
 
         }
 
-        // ロゴなどのコンテンツ
+        // ナビゲーションなどのコンテンツ
         .hd-nav-sub {
             display: block;
+            @include var.animetion();
+            height: 27px;
 
             ul {
                 display: flex;
@@ -94,6 +111,37 @@ header {
 }
 // Header
 
+/*
+ * UX
+ */
+// PC, SP 不要なメニュー非表示
+@include var.mq("pc") {
+    .header-nav-sp {
+        display: none !important;
+    }
+}
+@include var.mq("sp") {
+    .header-nav-pc {
+        display: none !important;
+    }
+}
+
+/*
+ * Barger ボタン
+ */
+#barger {
+    // PCでは非表示に
+    @include var.mq("pc") {
+        display: none;
+    }
+
+    // SP用設定
+    margin: 0 var.bs();
+    font-size: 1.6rem;
+    @include var.fc("white");
+}
+// Barger
+
 /**
  * Footer / フッター
  */
@@ -103,23 +151,29 @@ footer {
 
     * {
         @include var.fc("white");
-
     }
+
+    /*
+     * Floating Icons
+     */
+    #floating-icons {
+
+        * {
+            color: var.$bg-black !important; // Footer の color 設定上書き
+        }
+
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        padding: 24px 12px;
+
+        .page-up-arrow {
+            text-shadow:1px 1px 0 #FFF, -1px -1px 0 #FFF,
+                -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+                0px 1px 0 #FFF,  0-1px 0 #FFF,
+                -1px 0 0 #FFF, 1px 0 0 #FFF;
+        }
+    }
+    // Floating Icons
 }
 // Footer
-
-// SNS follow ボタン
-#floating-icons {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    padding: 24px 12px;
-
-    .page-up-arrow {
-        color: var.$bg-black;
-        text-shadow:1px 1px 0 #FFF, -1px -1px 0 #FFF,
-            -1px 1px 0 #FFF, 1px -1px 0 #FFF,
-            0px 1px 0 #FFF,  0-1px 0 #FFF,
-            -1px 0 0 #FFF, 1px 0 0 #FFF;
-    }
-}

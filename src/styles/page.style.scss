@@ -10,7 +10,13 @@ $tech_for_sample_min_width: 350px;
  * Main / メイン
  */
 main {
-    width: 100%;
+    @include var.mq("sp") {
+        width: var.get-width-rate("sp");
+    }
+
+    @include var.mq("pc") {
+        width: var.get-width-rate("pc");
+    }
 
     * {
         @include var.fc("black");
@@ -23,11 +29,11 @@ main {
         margin-bottom: 24px;
 
         @include var.mq("sp") {
-            width: map-get(var.$content-width-rate, "sp");
+            width: var.get-width-rate("sp");
         }
 
         @include var.mq("pc") {
-            width: map-get(var.$content-width-rate, "pc");
+            width: var.get-width-rate("pc");
             max-width: var.$pc-max-width;
         }
 
@@ -84,17 +90,6 @@ main {
 
                     @include var.mq(pc) {
                         padding: var.bs();
-                    }
-                }
-
-                .sample-works-link {
-                    margin: 0 0 0 3px;
-                    font-weight: 900;
-                    font-style: normal;
-
-                    &:after {
-                        font: var(--fa-font-solid);
-                        content: "\f08e"; // ここにアイコンのUnicodeコードを入力
                     }
                 }
 
