@@ -22,6 +22,7 @@ a[target="_blank"] {
     font-style: normal;
 
     &:after {
+        margin-left: 5px;
         font: var(--fa-font-solid);
         content: "\f08e"; // ここにアイコンのUnicodeコードを入力
     }

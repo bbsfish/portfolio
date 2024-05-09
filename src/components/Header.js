@@ -35,11 +35,11 @@ export default function Header() {
             <a href="#myskill">スキル</a>
           </li>
           <li>
-            <a href="#myworks">作品</a>
+            <a href="#myworks">ウェブリンク</a>
           </li>
         </ul>
       </nav>
-    )
+    );
   }
   
   return (
@@ -62,7 +62,7 @@ export default function Header() {
               <a href="#myskill">スキル</a>
             </li>
             <li>
-              <a href="#myworks">作品</a>
+              <a href="#myworks">ウェブリンク</a>
             </li>
           </ul>
         </nav>
