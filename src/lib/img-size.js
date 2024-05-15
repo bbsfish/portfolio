@@ -7,10 +7,10 @@ function rehypeImageSize() {
       if (node.tagName === "img") {
         // ![Dog](/images/dog.png) の場合、src = "/images/dog.png"
         const src = node.properties.src;
-        console.debug('src', sizeOf("src/public" + node.properties.src));
-        const { width, height } = sizeOf("src/public" + node.properties.src);
-        node.properties.width = width;
-        node.properties.height = height;
+        const { width, height } = sizeOf("public" + node.properties.src);
+        node.properties.fill;
+        // node.properties.width = width;
+        // node.properties.height = height;
       }
     });
   };

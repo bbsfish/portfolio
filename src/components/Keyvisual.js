@@ -1,12 +1,12 @@
 import Image from "next/image";
-import profileImage from "@/public/me.png";
 
 export default function Keyvisual() {
   return (
     <div id="top-kv">
       <div className="profile-image-container">
         <Image
-          src={profileImage}
+          src="/me.png"
+          width={200}
           height={200}
           alt="プロフィール写真"
           className="profile-image"

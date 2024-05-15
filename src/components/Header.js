@@ -29,13 +29,13 @@ export default function Header() {
         >
         <ul>
           <li className="active-hd-nav">
-            <a href="#whatican">できること</a>
+            <a href="#skill">スキル</a>
+          </li>
+          <li className="active-hd-nav">
+            <a href="#devs">作ったもの</a>
           </li>
           <li>
-            <a href="#myskill">スキル</a>
-          </li>
-          <li>
-            <a href="#myworks">ウェブリンク</a>
+            <a href="#weblink">ウェブリンク</a>
           </li>
         </ul>
       </nav>
@@ -56,13 +56,13 @@ export default function Header() {
           >
           <ul>
             <li className="active-hd-nav">
-              <a href="#whatican">できること</a>
+              <a href="#skill">スキル</a>
             </li>
             <li>
-              <a href="#myskill">スキル</a>
+              <a href="#devs">作ったもの</a>
             </li>
             <li>
-              <a href="#myworks">ウェブリンク</a>
+              <a href="#weblink">ウェブリンク</a>
             </li>
           </ul>
         </nav>

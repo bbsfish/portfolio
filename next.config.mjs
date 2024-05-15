@@ -14,6 +14,9 @@ const nextConfig = {
       },
     ]
   },
+  // images: {
+  //   domains: ['localhost'], // 画像を置いているドメイン
+  // },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },

@@ -13,16 +13,25 @@ import remarkMath from 'remark-math';
 // 数式レンダリング
 import rehypeKatex from 'rehype-katex';
 // 画像のバインドとリサイズ
-import rehypeImageSize from "@/lib/img-size";
+import rehypeImageSize from '@/lib/img-size';
 
 import 'katex/dist/katex.min.css';
+import '@/styles/markdown.style.scss';
 
 function Markdown(props) {
   const { text } = props;
   return <ReactMarkdown
     rehypePlugins={[rehypeImageSize]}
     remarkPlugins={[remarkGfm, remarkMath, rehypeKatex]}
-  >{text}</ReactMarkdown>;
+    className='markdown-wrp'
+    // components={{
+    //   img: (props) => (
+    //     <Image src={props.src} alt={props.alt} width={1200} height={200} />
+    //   ),
+    // }}
+  >
+    {text}
+  </ReactMarkdown>;
 }
 
 export default Markdown;
