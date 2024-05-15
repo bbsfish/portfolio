@@ -15,11 +15,12 @@ export default function Home() {
           <nav>
             <ol>
               <li><a href="#whatican" >なにができるか</a></li>
-              <li><a href="#whatican" >なにができるか</a></li>
               <li><a href="#myskill" >スキル</a></li>
               <li><a href="#myworks" >ウェブリンク</a></li>
             </ol>
           </nav>
+        </section>
+        <section>
         </section>
         <section id="whatican">
           <h1>なにができるか</h1>

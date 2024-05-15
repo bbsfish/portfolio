@@ -8,7 +8,7 @@ export default function Header() {
     return (
       <i
         id="barger"
-        class="fa-sharp fa-solid fa-bars"
+        className="fa-sharp fa-solid fa-bars"
         onClick={() => {
           setIsBargerOpen(!isBargerOpen);
         }}

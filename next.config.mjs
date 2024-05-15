@@ -6,6 +6,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: '/',
+        destination: '/home',
+      },
+    ]
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
