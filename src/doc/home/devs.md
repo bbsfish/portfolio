@@ -16,7 +16,7 @@
 
 
 ## ローカルファイルを編集するウェブアプリケーション
-[公開ページリンク](https://bbsfish.github.io/hashed-potato-dev/#/)
+[公開ページリンク](https://hashed-potato-v3.vercel.app/#/)
 ### ウェブアプリケーションイメージ
 ![ウェブアプリケーションイメージ](/hashed-potato-dev.png)
 ### 概要
