@@ -26,3 +26,9 @@
 ](https://developer.mozilla.org/ja/docs/Web/API/Web_Crypto_API) を使用しています。
 ### バックエンド
 エージェントサーバと呼ばれる、サーバーシステムがあります。これは Express で構築しましたが、現在は開発用として、Firebase の Cloud Firestore を DB として、Google App Scripts で簡易的に HTTP リクエストを受け付けています。
+
+## LINE から操作できるクレジットカードの決済情報記録アプリケーション
+### アプリケーションイメージ
+![決済手動登録画面](/ly.cf067016.cloudfree.jp.png)
+![決済記録確認画面](/ly.cf067016.cloudfree.jp_2.png)
+![LINEの決済通知画面](/ly.cf067016.cloudfree.jp_3.jpg)

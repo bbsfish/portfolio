@@ -46,7 +46,7 @@ export default function Header() {
     <header id="header">
       <div className="hd-content">
         <div className="hd-logo">
-          <a href="#/" className="logo-title">ポートフォリオ</a>
+          <a href="/" className="logo-title">ポートフォリオ</a>
           <BargerButton />
         </div>
         <HederNavForSp />

@@ -111,4 +111,18 @@ main {
         }
     }
 }
-// Main
+
+// ボタンのスタイル
+.AllArticlesButton {
+    border: none; // ボーダーなし
+    padding: 10px 20px; // 内側の余白
+    border-radius: 5px; // 角丸
+    cursor: pointer; // カーソルをポインターに
+    font-size: 14px; // フォントサイズ
+  
+    // ボタンが含まれる要素が小さい場合に余白を追加するスタイル
+    &.SmallContainer {
+      margin-top: 10px;
+    }
+  }
+  
